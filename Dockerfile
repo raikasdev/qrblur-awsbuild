@@ -7,6 +7,7 @@ COPY . ${LAMBDA_TASK_ROOT}
 # from your project folder.
 RUN yum -y install https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/g/GraphicsMagick-1.3.38-1.el7.x86_64.rpm
 RUN yum -y install https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/Packages/z/zbar-0.10-27.el7.x86_64.rpm
+RUN sudo yum install mesa-libGL -y
 COPY requirements.txt  .
 RUN pip3 install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
 
